@@ -10,9 +10,10 @@ body {
 }
 
 #profile {
-  padding: 40px 130px;
+  padding: max(20px, 5vw);
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .hello {
@@ -21,26 +22,30 @@ body {
 
 .hero-content {
   display: flex;
+  flex-wrap: wrap;
   gap: 40px;
   align-items: center;
-  background-color: #000000;
+  background-color: #000;
   border-radius: 20px;
-  flex-wrap: wrap;
+  padding: 20px;
+  width: 100%;
 }
 
 .about {
   flex: 1;
-  min-width: 300px;
+  min-width: 280px;
   padding: 40px;
   color: rgb(184, 184, 12);
   border-radius: 20px;
 }
 
 .profile-img {
-  height: 400px;
-  width: 300px;
+  height: auto;
+  max-height: 400px;
+  width: 100%;
+  max-width: 300px;
   object-fit: cover;
-  margin: 40px;
+  margin: 40px auto;
   border-radius: 12px;
   border: 2px solid rgb(184, 184, 12);
 }
@@ -63,7 +68,7 @@ a:hover {
 }
 
 #projects {
-  padding: 40px 130px 40px 130px;
+  padding: max(20px, 5vw);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -72,17 +77,17 @@ a:hover {
 .project {
   padding: 40px;
   color: rgb(184, 184, 12);
-  background-color: #000000;
+  background-color: #000;
   border-radius: 20px;
   margin-bottom: 40px;
-  border-end-end-radius: 80px 80px;
 }
 
 .image-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 40px;
   margin-top: 10px;
+  justify-content: center;
 }
 
 .pss img {
@@ -92,79 +97,113 @@ a:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-#skills {
-  background-color: #1e1e1e;
-  padding: 40px;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.container {
+  background: #000;
+  position: relative;
+  max-width: 1500%;
+  width: 100%;
+  padding: max(20px, 5vw);
+  border-radius: 8px;
+}
+.sk{
+  color: #e6d70c;
+}
+.container .skill-box {
+  width: 100%;
+  margin: 1em;
 }
 
-.skils {
-  padding: 40px;
-  display: flex;
-  align-items:start;
-  background-color: #000000;
-  color: rgb(184, 184, 12);
-  border-radius: 20px;
-  border-end-end-radius: 80px 80px;
+.skill-box .title {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  color: #e6d70c;
 }
 
-.ty {
-  text-decoration-line: underline;
-  text-decoration-color: rgb(184, 184, 12);
-
-}
-.ll{
-  flex-direction: row;
-  font-size: larger;
-  font-weight: bold;
-}
-
-.bars {
-  width: 1100px;
-  background-color: #636161;
-  border-radius: 20px;
-  overflow: hidden;
+.skill-box .skill-bar {
   height: 20px;
-  margin-bottom: 20px;
-  margin-right: 20px;
-}
-
-.bar {
-  height: 100%;
-  max-width: 100%;
+  width: 100%;
   border-radius: 20px;
+  margin-top: 6px;
+  background: rgba(118, 194, 13, 0.1);
 }
 
-.kt {
-  width: 80%;
-  background-color: #7f52ff;
+.skill-bar .skill-per {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 90%;
+  border-radius: 6px;
+  animation: progress 1.4s ease-in-out forwards;
+  opacity: 0;
 }
-
-.java {
-  width: 80%;
-  background-color: #f89820;
+.skill-per.html{
+ background-color:  #e34c26;
+  width: 70%;
+  animation-delay: .15s;
 }
-
-.html {
-  width: 50%;
-  background-color: #e34c26;
-}
-
-.css {
+.skill-per.css {
+  background-color:  #264de4;
   width: 60%;
-  background-color: #264de4;
+  animation-delay: .15s;
+}
+.skill-per.kt{
+ background-color:  #7f52ff;
+  width: 90%;
+  animation-delay: .15s;
+}
+.skill-per.jc {
+  background-color: #0019f4;
+  width: 90%;
+  animation-delay: .45s;
 }
 
-.jpc {
-  width: 80%;
-  background-color: #0019f4;
+.skill-per.java {
+  background-color: #f89820;
+  width: 70%;
+  animation-delay: .30s;
 }
-.spring{
-  width: 80%;
+
+.skill-per.sb {
   background-color: #1b9e35;
+  width: 50%;
+  animation-delay: .45s;
+}
+
+@keyframes progress {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.skill-per .tooltip {
+  position: absolute;
+  right: -14px;
+  top: -28px;
+  font-size: 9px;
+  font-weight: 600;
+  color: #121a01;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: #c5da0a;
+  z-index: 1;
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+  background: #c5da0a;
+  transform: translateX(-50%) rotate(45deg);
 }
 
 #inquiry {
@@ -172,8 +211,8 @@ a:hover {
   margin-top: 40px;
   display: flex;
   flex-direction: column;
-  background-color: #000000;
-  color: rgb(184, 184, 12);
+  background-color: #000;
+  color: #e6d70c;
   border-radius: 20px;
 }
 
@@ -181,28 +220,30 @@ form {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
 }
 
 input,
 textarea {
   padding: 10px;
   width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
   border-radius: 20px;
+  border: none;
 }
 
 .send {
   padding: 10px;
+
   width: 100%;
-  max-width: 100px;
-  margin: 0 auto;
+  max-width: 300px;
   border-radius: 20px;
   background-color: rgb(184, 184, 12);
   color: black;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
+  border: none;
+  margin: 0 auto;
 }
 
 .send:hover {
@@ -213,8 +254,8 @@ textarea {
 
   #profile,
   #projects,
-  #skil {
-    padding: 10px;
+  #skills {
+    padding: 20px;
   }
 
   .hero-content {
@@ -224,19 +265,17 @@ textarea {
   }
 
   .profile-img {
-    margin-bottom: 40px;
+    margin: 0 auto 40px;
     width: 80%;
-    height: auto;
+    max-width: 280px;
   }
 
   .about {
     padding: 20px;
     text-align: center;
-    margin-right: 30px;
   }
 
   .image-row {
-  
     justify-content: center;
     gap: 20px;
   }
@@ -245,19 +284,6 @@ textarea {
     max-width: 100px;
   }
 
-  .skils {
-    max-width: 100ch;
-    align-items:normal;
-    flex-direction: column;
-    text-align: center;
-  }
-  .bars{
-    max-width: 100%;
-  }
-
-  form {
-    width: 100%;
-  }
 
   input,
   textarea,
@@ -266,13 +292,28 @@ textarea {
   }
 }
 
+@media (max-width: 480px) {
+  .about {
+    font-size: 0.95rem;
+  }
+
+  .project {
+    padding: 20px;
+  }
+
+  .pss img {
+    max-width: 90px;
+  }
+}
+
 #footer {
-  background-color: #000000;
+  background-color: #000;
   color: rgb(184, 184, 12);
   text-align: center;
   margin-top: 40px;
   border-radius: 20px 20px 0 0;
   font-size: 14px;
+  padding: 20px;
 }
 
 #footer a {
