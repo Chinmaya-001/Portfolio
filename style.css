@@ -1,0 +1,286 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #636363;
+}
+
+#profile {
+  padding: 40px 130px;
+  display: flex;
+  justify-content: center;
+}
+
+.hello {
+  text-shadow: 0 0 10px yellow;
+}
+
+.hero-content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  background-color: #000000;
+  border-radius: 20px;
+  flex-wrap: wrap;
+}
+
+.about {
+  flex: 1;
+  min-width: 300px;
+  padding: 40px;
+  color: rgb(184, 184, 12);
+  border-radius: 20px;
+}
+
+.profile-img {
+  height: 400px;
+  width: 300px;
+  object-fit: cover;
+  margin: 40px;
+  border-radius: 12px;
+  border: 2px solid rgb(184, 184, 12);
+}
+
+.contact {
+  color: yellow;
+}
+
+.icon {
+  max-block-size: 20px;
+}
+
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#projects {
+  padding: 40px 130px 40px 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project {
+  padding: 40px;
+  color: rgb(184, 184, 12);
+  background-color: #000000;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  border-end-end-radius: 80px 80px;
+}
+
+.image-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-top: 10px;
+}
+
+.pss img {
+  max-width: 180px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#skills {
+  background-color: #1e1e1e;
+  padding: 40px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.skils {
+  padding: 40px;
+  display: flex;
+  align-items:start;
+  background-color: #000000;
+  color: rgb(184, 184, 12);
+  border-radius: 20px;
+  border-end-end-radius: 80px 80px;
+}
+
+.ty {
+  text-decoration-line: underline;
+  text-decoration-color: rgb(184, 184, 12);
+
+}
+.ll{
+  flex-direction: row;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.bars {
+  width: 1100px;
+  background-color: #636161;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.bar {
+  height: 100%;
+  max-width: 100%;
+  border-radius: 20px;
+}
+
+.kt {
+  width: 80%;
+  background-color: #7f52ff;
+}
+
+.java {
+  width: 80%;
+  background-color: #f89820;
+}
+
+.html {
+  width: 50%;
+  background-color: #e34c26;
+}
+
+.css {
+  width: 60%;
+  background-color: #264de4;
+}
+
+.jpc {
+  width: 80%;
+  background-color: #0019f4;
+}
+.spring{
+  width: 80%;
+  background-color: #1b9e35;
+}
+
+#inquiry {
+  padding: 20px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+  color: rgb(184, 184, 12);
+  border-radius: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input,
+textarea {
+  padding: 10px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+
+.send {
+  padding: 10px;
+  width: 100%;
+  max-width: 100px;
+  margin: 0 auto;
+  border-radius: 20px;
+  background-color: rgb(184, 184, 12);
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.send:hover {
+  background-color: yellow;
+}
+
+@media (max-width: 768px) {
+
+  #profile,
+  #projects,
+  #skil {
+    padding: 10px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .profile-img {
+    margin-bottom: 40px;
+    width: 80%;
+    height: auto;
+  }
+
+  .about {
+    padding: 20px;
+    text-align: center;
+    margin-right: 30px;
+  }
+
+  .image-row {
+  
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .pss img {
+    max-width: 100px;
+  }
+
+  .skils {
+    max-width: 100ch;
+    align-items:normal;
+    flex-direction: column;
+    text-align: center;
+  }
+  .bars{
+    max-width: 350px;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  input,
+  textarea,
+  .send {
+    max-width: 100%;
+  }
+}
+
+#footer {
+  background-color: #000000;
+  color: rgb(184, 184, 12);
+  text-align: center;
+  margin-top: 40px;
+  border-radius: 20px 20px 0 0;
+  font-size: 14px;
+}
+
+#footer a {
+  color: yellow;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#footer a:hover {
+  text-decoration: underline;
+}
