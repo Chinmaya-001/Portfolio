@@ -252,7 +252,7 @@ textarea {
     text-align: center;
   }
   .bars{
-    max-width: 350px;
+    max-width: 100%;
   }
 
   form {
